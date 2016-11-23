@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>手机个人站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <!-- Demo styles -->
+    <style>
+    body {
+        background: #fff;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 600px;
+        height: 650px;
+        text-align: center;
+
+    }
+    .swiper-slide p,h3,img{
+        
+        color: #fff;
+        margin-top: 50px;
+        background:rgba(0,0,0,.6);
+        font-size: 26px;    
+        border-radius: 20px;
+        margin-left: 40px;
+        margin-right: 40px;
+        font-family: yuan;
+        padding:10px 0;
+    }
+    .swiper-slide img{
+        border-radius: 50%;
+        /* text-align: center;
+        display: inline-block; */
+    }
+    @font-face{
+        font-family: yuan;
+        src:url('圆滚滚莉麻.ttf');
+     }
+    </style>
+</head>
+<body>
+    <audio style="display:none;" id="music"  autoplay controls src="1.mp3"></audio>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-button-prev" id="prev" ></div>
+            <div class="swiper-slide" style="background-image:url(img/图片1.jpg)">
+                <img class="ani" swiper-animate-effect="bounceIn" swiper-animate-duration="3s" src="img/1.jpg" />
+                <h3 class="ani" swiper-animate-effect="bounceInDown" >Winnie Cheng</h3>
+                <p class="ani" swiper-animate-effect="bounceInUp">热爱生活，热爱前端</p>
+            </div>
+            <div class="swiper-slide" style="background-image:url(img/图片2.jpg)">
+                <p class="ani" swiper-animate-effect="rotateInDownRight" >2015.7-至今</p>
+                <p class="ani" swiper-animate-effect="rotateInDownLeft">上海诺阁网络科技有限公司</p>
+                <p class="ani" swiper-animate-effect="rotateInUpRight">前端开发工程师</p>
+                <p class="ani" swiper-animate-effect="rotateInUpLeft">主要工作：</p>
+            </div>
+            <div class="swiper-slide" style="background-image:url(img/图片3.jpg)">
+                <p class="ani" swiper-animate-effect="bounceInDown">2015.7-至今</p>
+                <p class="ani" swiper-animate-effect="bounceInLeft">上海诺阁网络科技有限公司</p>
+                <p class="ani" swiper-animate-effect="bounceInRight">前端开发工程师</p>
+                <p class="ani" swiper-animate-effect="bounceInUp">主要工作：</p>
+            </div>
+            <div class="swiper-slide" style="background-image:url(img/图片4.jpg)">
+                <p class="ani" swiper-animate-effect="swing">精通html,css,javascript的原生语法，精通jquery,bootstrap,
+                mui.ionic等常用库，了解angularjs框架，requirejs，seajs等开发模式。熟悉css3,html5等新增语法。了解后台语言的基本思路。</p>
+                <p class="ani" swiper-animate-effect="wobble" swiper-animate-duration="3s">快联系我吧！<br/>手机：18710152102<br/>邮箱：18710152102@163.com</p>
+            </div>
+            <div class="swiper-button-next" id="next"></div>
+        </div>
+
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" id="paper" style="color:#fff" >
+           
+        </div>
+
+        <!-- Add Arrows -->
+        
+        
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <!-- <script src="js/jquery-1.8.3.min.js"></script> -->
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationType : 'fraction',
+        paginationElement : 'li',
+        effect: 'flip',
+        grabCursor: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            /*swiperAnimateCache(swiper);*/ //隐藏动画元素 
+            swiperAnimate(swiper); //初始化完成开始动画
+          }, 
+          onSlideChangeEnd: function(swiper){ 
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+          } 
+    });
+
+      
+    </script>
+    <script >
+
+    </script>
+
+</body>
+</html>
